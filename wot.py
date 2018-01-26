@@ -1,7 +1,7 @@
 #!/bin/python
 from random import randint
 
-friendByMember = 20 # minimum, could be more
+friendByMember = 50 # minimum, could be more
 nbMember = 10000
 groupSize = 5
 members = []
@@ -30,7 +30,7 @@ def crossDetection():
         choice = randint(0, nbMember - 1)
         group2.add(choice)
 
-    # We verify if a people in group1, know someone in group2
+    # We verify if a people in group1, know someone in group2 (because the friends are reciprocals, we only need to test for one direction)
     for member in group1:
         for friend in members[member]:
             if friend in group2:
